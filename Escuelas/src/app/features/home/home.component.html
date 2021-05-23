@@ -1,0 +1,13 @@
+<ngb-carousel>
+  <ng-template ngbSlide *ngFor="let carr of carrosel, index">
+    <div class="picsum-img-wrapper">
+      <img style="width: 100%; height: 90vh;" [src]="carr.img" class="img-fluid img-thumbnail" alt="Random first slide">
+    </div>
+    <div class="carousel-caption">
+      <h3>{{carr.title | titlecase}}</h3>
+      <p>{{carr.text}}</p>
+    </div>
+  </ng-template>
+</ngb-carousel>
+<hr>
+

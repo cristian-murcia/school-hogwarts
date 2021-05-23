@@ -1,0 +1,27 @@
+<div class="mt-3">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a [routerLink]="['/home']">Inicio</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Estudiantes</li>
+    </ol>
+  </nav>
+
+  <div class="w1-00">
+    <ul class="nav nav-tabs">
+      <li class="nav-item" *ngFor="let tab of tabs">
+        <button class="nav-link" [routerLink]="tab.routerLink" routerLinkActive="active" value="{{tab.tab}}"
+          (click)="selectTab(tab.tab)">{{tab.title |titlecase}}</button>
+      </li>
+    </ul>
+
+    <div class="w-100 h-100" [ngSwitch]="tabSelect">
+      <app-students *ngSwitchCase="OptionTab.student"></app-students>
+
+      <app-requests *ngSwitchCase="OptionTab.request"></app-requests>
+    </div>
+
+  </div>
+
+
+
+</div>

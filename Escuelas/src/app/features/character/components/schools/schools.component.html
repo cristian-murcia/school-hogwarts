@@ -1,0 +1,31 @@
+<div class="mt-3">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a [routerLink]="['/home']">Inicio</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Personajes</li>
+    </ol>
+  </nav>
+
+  <div class="w-100 mt-3">
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <label class="input-group-text" for="escuelas">Elige una escuela</label>
+      </div>
+      <select class="custom-select" id="escuelas" (change)="getAllCharacter($event.target)">
+        <ng-container *ngFor="let escuela of escuelas">
+          <option value="{{escuela.name}}">{{escuela.name | titlecase}}</option>
+        </ng-container>
+      </select>
+    </div>
+  </div>
+
+  <div *ngIf="character && character.length > 0">
+    <app-table [listData]="character"></app-table>
+  </div>
+
+
+  <span *ngIf="character && character.length == 0" style="color: red;">
+    Ha ocurrido un error al traer la lista
+  </span>
+
+</div>

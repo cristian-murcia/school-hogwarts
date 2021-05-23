@@ -1,0 +1,14 @@
+
+
+<div class="w-100 h-100">
+
+  <h5 class="mt-2 mb-4">Lista de estudiantes</h5>
+
+  <div class="h-100" *ngIf="student.length > 0">
+    <app-table [listData]="student" ></app-table>
+  </div>
+
+  <div class="h-100" *ngIf="student.length == 0">
+    <span>Ha ocurrido un error al traer la lista de estudiantes</span>
+  </div>
+</div>

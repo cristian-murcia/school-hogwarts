@@ -1,0 +1,6 @@
+<div class="d-flex">
+  <ag-grid-angular id="myGrid" class="ag-theme-alpine w-100 d-inline-block" style="min-height: 80vh;"
+    [columnDefs]="columnDefs" [rowData]="listData" [defaultColDef]="defaultColDef" [rowHeight]="140"
+    (gridReady)="onGridReady($event)">
+  </ag-grid-angular>
+</div>
